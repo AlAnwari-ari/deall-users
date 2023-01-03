@@ -1,0 +1,513 @@
+{
+	"info": {
+		"_postman_id": "0c519fbd-cff5-4990-a93d-15666d0dc053",
+		"name": "deall-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22934309"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "find all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "200",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/user",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"user"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "X-CSRF-Token, Authorization, Origin, Referer, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "GET,DELETE,PUT,POST,OPTIONS"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jan 2023 19:33:24 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "553"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"messages\": \"OK\",\n    \"data\": {\n        \"results\": [\n            {\n                \"user_id\": 1,\n                \"role_id\": 1,\n                \"username\": \"admin\",\n                \"fullname\": \"Admin\",\n                \"email\": \"admin@mail.com\",\n                \"role_name\": \"admin\",\n                \"created_at\": \"2023-01-03T01:57:58.335346Z\",\n                \"updated_at\": \"2023-01-03T01:57:58.335346Z\"\n            }\n        ],\n        \"total\": 1,\n        \"next_page\": false,\n        \"prev_page\": false\n    },\n    \"errors\": null,\n    \"code\": 200\n}"
+						}
+					]
+				},
+				{
+					"name": "find by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role_id\":2,\r\n    \"username\":\"user3\",\r\n    \"email\":\"user3@mail.com\",\r\n    \"fullname\":\"User tiga\",\r\n    \"password\": \"FVIv6sfCoQ6oSyjQH0/qjcgTr5Q=\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\":2,\r\n    \"fullname\":\"User Asyik\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/user/4",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "decrypt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/decrypt?payload=kib2FaOALsnTbyEiAFI95RChUzmZ",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"decrypt"
+					],
+					"query": [
+						{
+							"key": "payload",
+							"value": "kib2FaOALsnTbyEiAFI95RChUzmZ",
+							"description": "mandatory"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "encrypt",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/encrypt?payload=user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"encrypt"
+					],
+					"query": [
+						{
+							"key": "payload",
+							"value": "user",
+							"description": "mandatory"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/encrypt?payload=admin",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"encrypt"
+							],
+							"query": [
+								{
+									"key": "payload",
+									"value": "admin",
+									"description": "mandatory"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-CSRF-Token, Authorization, Origin, Referer, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,DELETE,PUT,POST,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 02 Jan 2023 19:01:32 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "105"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"OK\",\n    \"data\": \"334t3sD0fub7MgPuQ820JWLjoPKz\",\n    \"errors\": null,\n    \"code\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"334t3sD0fub7MgPuQ820JWLjoPKz\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"334t3sD0fub7MgPuQ820JWLjoPKz\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-CSRF-Token, Authorization, Origin, Referer, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,DELETE,PUT,POST,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 02 Jan 2023 19:09:05 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "873"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"OK\",\n    \"data\": {\n        \"access_token\": \"U9t4Gv4qChaaKnQsJ42YxEXeUF6XbY1jIqYzMZm3RVcl06fKyQ763Shm7EYVx9WAghkkJY4z4Di44sym6S2iSgWBrQZp0ws2nP0d+scLiy5BczuqVvEL2M+CatjxOxb2++lH/bNNf8kPfk8FeZs0SNGkk00/5kV4xEy49Ft8gqmYGpLhikXNPtzJ71UEyGmeHi7OKRtoltaTWLvmmwrQqSjVuqc2d7QRq9C56+b8vwrRdoP8egT4FHQj+Tb2zytOJ0zbm2Jt1LS3jaOb6QZTWk87maNp9aQnsEetUqc=\",\n        \"refresh_token\": \"av1TyL13RXO5o01+OIjxNLJj11TP6yJKpI7Apt8q7EShO7K/VJQQYWYdxEWSe25zHpnlOhB/EGzjYWzuGkVGumnIB1WOanSL3GH4E/hIp8L4SZshErIiQTzPCIRz9LE/vZ8KBIfq6sTc/MuHltmVmCFJerWqnwsqjoZv8A0Y8JiC8/cd9/puMvee+OA8xadqkrIk9+tpuQAbUq/NGfW7R97HebxNjGFvy831D0/wrhNKATfTKUgRV6izre0LkwfLc31Jbt3o7CppKNtH0xtbJvmJsTZ4L/hFnHJyCmSz3DOGE9ftCFtyKA==\",\n        \"access_expired\": \"2023-01-06T02:09:05.5222069+07:00\",\n        \"refresh_expired\": \"2023-01-10T02:09:05.5222716+07:00\"\n    },\n    \"errors\": null,\n    \"code\": 200\n}"
+				}
+			]
+		},
+		{
+			"name": "token validation",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/token-validation",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"token-validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/logout",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token refresh",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token-refresh}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/token-refresh",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"token-refresh"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/token-refresh",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"token-refresh"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "X-CSRF-Token, Authorization, Origin, Referer, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "GET,DELETE,PUT,POST,OPTIONS"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 02 Jan 2023 19:52:09 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "880"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"messages\": \"OK\",\n    \"data\": {\n        \"access_token\": \"1HFZSFll8dnW0hA5YLfQOkeWj5ww+QmZRc0x/9WI3qSoKLaC78QSvYUN3vgk+Ofx4m5KjEz8gSBkVBsa0vS+PPZeUnvozxF2fnghgkjUE9MosXg1w1AHe3vHpsQ/39oLbAoGm3doHUOOz/Qu4rHJA0WXRapB99bNpjwqe26EtuMLe05jliTGuEAsIGZnrEpu+x4sjU1438KJYnPFCKPPQm5sOi/WHdRUjOho2clrCfyK4aNLjNPz4F1+NspRq9LmpKYeNpo4C8OX/T4N8eWXouOnBPm62GmnNax4zdlB/V8=\",\n        \"refresh_token\": \"8c2MmqaL/WKbmtcDGjBpzm2iNZDluWOOWJFJ6t63A3qsUVbX22y8o3xYbQs/a63lM0F5qoqdVZ6Bra6s13PUeIql9UBd/FL3cGAPUPj/7z2/kFnmnQHWPBmLfVSo4zDDkIT0iqYxPlsU2biBy5Bn+DNQXr1WfJ5ybq7wBj+F0X1mCRmYSG6DogzTNfH5l8HbQ0m9cPxWrj6G/8WI++csP9Ey3Ze9CEN+n4jw58lYkvjI+33F4xBgi5JghndfAxO5nVONpQBtpM+zqmQcG+dguHj+OB1yoeQX8gwv2PxlBUQ3DmR0jE5Oi+6ycg==\",\n        \"access_expired\": \"2023-01-06T02:52:09.431074+07:00\",\n        \"refresh_expired\": \"2023-01-10T02:52:09.4311385+07:00\"\n    },\n    \"errors\": null,\n    \"code\": 200\n}"
+				}
+			]
+		}
+	]
+}
