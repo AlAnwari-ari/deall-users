@@ -54,6 +54,11 @@ try play something at `http://localhost:8080/api/v1`
 ##### - kubernetes
 please follow and/or read this [guide](https://levelup.gitconnected.com/deploying-dockerized-golang-api-on-kubernetes-with-postgresql-mysql-d190e27ac09f) to deploy and run app using kubernetes locally
 
+some images from writer practice deployment with kubernetes locally:
+![My Image](docs/img/the-pods.png)
+![My Image](docs/img/app-kubernetes-run.png)
+![My Image](docs/img/api-hit-run-on-kubernets.png)
+
 ## Default Data
 you can login with this data (generated from the beginning through migration)
 ```
@@ -61,3 +66,5 @@ username: admin
 password: admin
 ```
 pass the payload to `/login`
+
+`password` must be encrypted. Use service `/encrypt` to encrypt text and `/decrypt` to decrypt
